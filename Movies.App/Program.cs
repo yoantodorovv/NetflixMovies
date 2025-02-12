@@ -58,9 +58,6 @@ public class Program
         services.AddControllersWithViews();
         
         services.AddScoped<IReaderAppService, ReaderAppService>();
-        services.AddScoped<UserManager<ApplicationUser>>();
-        services.AddScoped<SignInManager<ApplicationUser>>();
-        services.AddScoped<RoleManager<ApplicationRole>>();
         
         services.AddDefaultIdentity<ApplicationUser>(options =>
             {
