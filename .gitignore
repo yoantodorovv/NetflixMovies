@@ -1,0 +1,11 @@
+# Ignore all bin and obj folders in any project
+bin/
+obj/
+
+# Optional: Ignore Visual Studio and Rider IDE-specific files
+.vs/
+.idea/
+*.suo
+*.user
+*.cache
+*.vscode/
