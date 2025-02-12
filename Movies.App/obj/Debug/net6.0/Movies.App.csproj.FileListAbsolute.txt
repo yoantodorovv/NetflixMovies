@@ -1,0 +1,9 @@
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/obj/Debug/net6.0/Movies.App.csproj.AssemblyReference.cache
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/obj/Debug/net6.0/Movies.App.GeneratedMSBuildEditorConfig.editorconfig
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/obj/Debug/net6.0/Movies.App.AssemblyInfoInputs.cache
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/obj/Debug/net6.0/Movies.App.AssemblyInfo.cs
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/obj/Debug/net6.0/Movies.App.csproj.CoreCompileInputs.cache
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/obj/Debug/net6.0/Movies.App.MvcApplicationPartsAssemblyInfo.cs
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/obj/Debug/net6.0/Movies.App.MvcApplicationPartsAssemblyInfo.cache
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/obj/Debug/net6.0/Movies.App.RazorAssemblyInfo.cache
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/obj/Debug/net6.0/Movies.App.RazorAssemblyInfo.cs
