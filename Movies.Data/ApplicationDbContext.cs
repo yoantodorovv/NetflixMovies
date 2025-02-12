@@ -1,6 +1,8 @@
+using System.Linq.Expressions;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Movies.Models.Models;
+using Movies.Models.Models.Base.Interface;
 using Movies.Models.Models.Identity;
 
 namespace Movies.Data;
@@ -29,5 +31,63 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, Applicati
         optionsBuilder.UseSqlServer("Server=.;Database=MoviesTest;User Id=sa;Password=Password123$;");
         
         base.OnConfiguring(optionsBuilder);
+    }
+
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        base.OnModelCreating(builder);
+        
+        foreach (var entityType in builder.Model.GetEntityTypes())
+        {
+            if (typeof(IBaseEntity<object>).IsAssignableFrom(entityType.ClrType))
+            {
+                builder.Entity(entityType.ClrType)
+                    .HasQueryFilter(ConvertFilterExpression(entityType.ClrType));
+            }
+        }
+    }
+    
+    private static LambdaExpression ConvertFilterExpression(Type entityType)
+    {
+        var parameter = Expression.Parameter(entityType, "e");
+        var property = Expression.Property(parameter, nameof(IBaseEntity<object>.IsDeleted));
+        var condition = Expression.Equal(property, Expression.Constant(false));
+        return Expression.Lambda(condition, parameter);
+    }
+
+    public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+    {
+        UpdateTimestamps();
+        return await base.SaveChangesAsync(cancellationToken);
+    }
+
+    private void UpdateTimestamps()
+    {
+        foreach (var entry in ChangeTracker.Entries())
+        {
+            if (entry.Entity is IBaseEntity<object> entity)
+            {
+                var now = DateTime.UtcNow;
+
+                switch (entry.State)
+                {
+                    case EntityState.Added:
+                        entity.CreatedAt = now;
+                        entity.UpdatedAt = now;
+                        entity.IsDeleted = false;
+                        break;
+
+                    case EntityState.Modified:
+                        entity.UpdatedAt = now;
+                        break;
+
+                    case EntityState.Deleted:
+                        entry.State = EntityState.Modified;
+                        entity.DeletedAt = now;
+                        entity.IsDeleted = true;
+                        break;
+                }
+            }
+        }
     }
 }
