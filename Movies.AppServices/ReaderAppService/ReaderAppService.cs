@@ -51,21 +51,26 @@ public class ReaderAppService : IReaderAppService
         {
             var rating = AddRating(record.Rating);
             var categories = AddCategories(record.Categories);
-            var country = AddCountries(record.Country);
+            var countries = AddCountries(record.Country);
             var directors = AddDirectors(record.Directors);
             var cast = AddCast(record.Cast);
             var duration = AddDuration(record.Duration);
 
+            var showType = Enum.TryParse<ShowType>(record.Type, out var type) ? type : ShowType.None;
+            var dateAdded = DateTime.TryParse(record.DateAdded, out var date) ? date : (DateTime?)null;
+            
             var show = new Show()
             {
+                Type = showType,
                 Title = record.Title,
                 ReleaseYear = int.Parse(record.ReleaseYear),
                 Description = record.Description,
                 DurationType = duration.DurationType,
                 DurationValue = duration.Value,
+                DateAdded = dateAdded,
                 Rating = rating,
                 Categories = categories,
-                Countries = country,
+                Countries = countries,
                 Directors = directors,
                 Cast = cast,
             };

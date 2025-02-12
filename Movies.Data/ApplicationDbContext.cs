@@ -2,6 +2,7 @@ using System.Linq.Expressions;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Movies.Models.Models;
+using Movies.Models.Models.Base;
 using Movies.Models.Models.Base.Interface;
 using Movies.Models.Models.Identity;
 
@@ -28,7 +29,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, Applicati
     // TODO: Get con string form config
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Server=.;Database=MoviesTest;User Id=sa;Password=Password123$;");
+        optionsBuilder.UseSqlServer("Server=.;Database=MoviesTest3;User Id=sa;Password=Password123$;");
         
         base.OnConfiguring(optionsBuilder);
     }
@@ -39,7 +40,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, Applicati
         
         foreach (var entityType in builder.Model.GetEntityTypes())
         {
-            if (typeof(IBaseEntity<object>).IsAssignableFrom(entityType.ClrType))
+            if (typeof(IAuditEntity).IsAssignableFrom(entityType.ClrType))
             {
                 builder.Entity(entityType.ClrType)
                     .HasQueryFilter(ConvertFilterExpression(entityType.ClrType));
@@ -50,7 +51,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, Applicati
     private static LambdaExpression ConvertFilterExpression(Type entityType)
     {
         var parameter = Expression.Parameter(entityType, "e");
-        var property = Expression.Property(parameter, nameof(IBaseEntity<object>.IsDeleted));
+        var property = Expression.Property(parameter, nameof(IAuditEntity.IsDeleted));
         var condition = Expression.Equal(property, Expression.Constant(false));
         return Expression.Lambda(condition, parameter);
     }
@@ -65,7 +66,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, Applicati
     {
         foreach (var entry in ChangeTracker.Entries())
         {
-            if (entry.Entity is IBaseEntity<object> entity)
+            if (entry.Entity is IAuditEntity entity)
             {
                 var now = DateTime.UtcNow;
 

@@ -3,7 +3,7 @@ using Movies.Models.Models.Base.Interface;
 
 namespace Movies.Models.Models.Base;
 
-public class BaseEntity<T> : IBaseEntity<T>
+public class BaseEntity<T> : IBaseEntity<T>, IAuditEntity
 {
     public T Id { get; set; }
 
