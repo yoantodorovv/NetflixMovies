@@ -21,8 +21,8 @@ public class ShowDto
         Categories = show.Categories;
         RatingId = show.RatingId;
         Rating = show.Rating;
-        DurationId = show.DurationId;
-        Duration = show.Duration;
+        DurationType = show.DurationType;
+        DurationValue = show.DurationValue;
     }
     
     public ShowType Type { get; set; }
@@ -34,6 +34,10 @@ public class ShowDto
     public int ReleaseYear { get; set; }
     
     public string Description { get; set; }
+
+    public DurationType DurationType { get; set; }
+
+    public int DurationValue { get; set; }
     
     public ICollection<Director> Directors { get; set; }
     
@@ -45,7 +49,4 @@ public class ShowDto
 
     public int RatingId { get; set; }
     public Rating? Rating { get; set; }
-
-    public int DurationId { get; set; }
-    public Duration? Duration { get; set; }
 }

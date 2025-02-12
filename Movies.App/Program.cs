@@ -18,7 +18,6 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
         RegisterServices(builder.Services, builder.Configuration);
 
         var app = builder.Build();
@@ -72,5 +71,7 @@ public class Program
             })
             .AddRoles<ApplicationRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>();
+
+        services.AddRazorPages();
     }
 }

@@ -21,7 +21,6 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, Applicati
     public DbSet<Cast> Cast { get; set; }
     public DbSet<Country> Countries { get; set; }
     public DbSet<Category> Categories { get; set; }
-    public DbSet<Duration> Durations { get; set; }
     public DbSet<Rating> Ratings { get; set; }
 
     // TODO: Get con string form config

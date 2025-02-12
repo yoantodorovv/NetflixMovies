@@ -25,6 +25,10 @@ public class Show : BaseEntity<Guid>
     public DateTime? DateAdded { get; set; }
     
     public int ReleaseYear { get; set; }
+
+    public DurationType DurationType { get; set; }
+
+    public int DurationValue { get; set; }
     
     [Required]
     [Range(1, 1000)]
@@ -41,8 +45,4 @@ public class Show : BaseEntity<Guid>
     [ForeignKey(nameof(Rating))]
     public int RatingId { get; set; }
     public Rating? Rating { get; set; }
-
-    [ForeignKey(nameof(Duration))]
-    public int DurationId { get; set; }
-    public Duration? Duration { get; set; }
 }
