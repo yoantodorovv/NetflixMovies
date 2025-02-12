@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "lEZHe4Evr9o=",
+  "dgSpecHash": "bXOfb+rpmg0=",
   "success": true,
   "projectFilePath": "/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/Movies.App.csproj",
   "expectedPackageFiles": [
+    "/Users/yoantodorov/.nuget/packages/csvhelper/33.0.1/csvhelper.33.0.1.nupkg.sha512",
     "/Users/yoantodorov/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/yoantodorov/.nuget/packages/microsoft.aspnetcore.cryptography.internal/6.0.29/microsoft.aspnetcore.cryptography.internal.6.0.29.nupkg.sha512",
     "/Users/yoantodorov/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/6.0.29/microsoft.aspnetcore.cryptography.keyderivation.6.0.29.nupkg.sha512",

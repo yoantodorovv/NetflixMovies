@@ -16,7 +16,14 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Movies.AppServices\Movies.AppServices.csproj" />
       <ProjectReference Include="..\Movies.Data\Movies.Data.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="Data\data.csv">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>

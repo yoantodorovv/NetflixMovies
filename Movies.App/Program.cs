@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Movies.AppServices.ReaderAppService;
+using Movies.AppServices.ReaderAppService.Interface;
 using Movies.Data;
 using Movies.Models.Models.Identity;
 
@@ -12,7 +14,7 @@ namespace Movies.App;
 
 public class Program
 {
-    public static void Main(string[] args)
+    public static async Task Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
 
@@ -25,7 +27,15 @@ public class Program
             .AddEntityFrameworkStores<ApplicationDbContext>();
         builder.Services.AddControllersWithViews();
 
+        RegisterServices(builder);
+
         var app = builder.Build();
+        
+        using (var scope = app.Services.CreateScope())
+        {
+            var readerService = scope.ServiceProvider.GetRequiredService<IReaderAppService>();
+            await readerService.SeedDatabaseAsync();
+        }
 
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
@@ -53,5 +63,10 @@ public class Program
         app.MapRazorPages();
 
         app.Run();
+    }
+
+    private static void RegisterServices(WebApplicationBuilder builder)
+    {
+        builder.Services.AddScoped<IReaderAppService, ReaderAppService>();
     }
 }

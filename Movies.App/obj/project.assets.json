@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "CsvHelper/33.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CsvHelper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CsvHelper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -945,6 +958,21 @@
           }
         }
       },
+      "Movies.AppServices/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "CsvHelper": "33.0.1",
+          "Movies.Data": "1.0.0",
+          "Movies.Dtos": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Movies.AppServices.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Movies.AppServices.dll": {}
+        }
+      },
       "Movies.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -970,6 +998,20 @@
           "bin/placeholder/Movies.Data.dll": {}
         }
       },
+      "Movies.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "CsvHelper": "33.0.1",
+          "Movies.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Movies.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Movies.Dtos.dll": {}
+        }
+      },
       "Movies.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -987,6 +1029,34 @@
     }
   },
   "libraries": {
+    "CsvHelper/33.0.1": {
+      "sha512": "fev4lynklAU2A9GVMLtwarkwaanjSYB4wUqO2nOJX5hnzObORzUqVLe+bDYCUyIIRQM4o5Bsq3CcyJR89iMmEQ==",
+      "type": "package",
+      "path": "csvhelper/33.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "csvhelper.33.0.1.nupkg.sha512",
+        "csvhelper.nuspec",
+        "lib/net462/CsvHelper.dll",
+        "lib/net462/CsvHelper.xml",
+        "lib/net47/CsvHelper.dll",
+        "lib/net47/CsvHelper.xml",
+        "lib/net48/CsvHelper.dll",
+        "lib/net48/CsvHelper.xml",
+        "lib/net6.0/CsvHelper.dll",
+        "lib/net6.0/CsvHelper.xml",
+        "lib/net7.0/CsvHelper.dll",
+        "lib/net7.0/CsvHelper.xml",
+        "lib/net8.0/CsvHelper.dll",
+        "lib/net8.0/CsvHelper.xml",
+        "lib/netstandard2.0/CsvHelper.dll",
+        "lib/netstandard2.0/CsvHelper.xml",
+        "lib/netstandard2.1/CsvHelper.dll",
+        "lib/netstandard2.1/CsvHelper.xml"
+      ]
+    },
     "Humanizer.Core/2.8.26": {
       "sha512": "OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
       "type": "package",
@@ -2511,6 +2581,11 @@
         "version.txt"
       ]
     },
+    "Movies.AppServices/1.0.0": {
+      "type": "project",
+      "path": "../Movies.AppServices/Movies.AppServices.csproj",
+      "msbuildProject": "../Movies.AppServices/Movies.AppServices.csproj"
+    },
     "Movies.Common/1.0.0": {
       "type": "project",
       "path": "../Movies.Common/Movies.Common.csproj",
@@ -2520,6 +2595,11 @@
       "type": "project",
       "path": "../Movies.Data/Movies.Data.csproj",
       "msbuildProject": "../Movies.Data/Movies.Data.csproj"
+    },
+    "Movies.Dtos/1.0.0": {
+      "type": "project",
+      "path": "../Movies.Dtos/Movies.Dtos.csproj",
+      "msbuildProject": "../Movies.Dtos/Movies.Dtos.csproj"
     },
     "Movies.Models/1.0.0": {
       "type": "project",
@@ -2534,6 +2614,7 @@
       "Microsoft.AspNetCore.Identity.UI >= 6.0.29",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.36",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.29",
+      "Movies.AppServices >= 1.0.0",
       "Movies.Data >= 1.0.0"
     ]
   },
@@ -2562,6 +2643,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.AppServices/Movies.AppServices.csproj": {
+              "projectPath": "/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.AppServices/Movies.AppServices.csproj"
+            },
             "/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Data/Movies.Data.csproj": {
               "projectPath": "/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Data/Movies.Data.csproj"
             }

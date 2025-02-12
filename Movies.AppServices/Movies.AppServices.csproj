@@ -6,4 +6,19 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="CsvHelper" Version="33.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Movies.Data\Movies.Data.csproj" />
+      <ProjectReference Include="..\Movies.Dtos\Movies.Dtos.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="ReaderAppService\Data\data.csv">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>

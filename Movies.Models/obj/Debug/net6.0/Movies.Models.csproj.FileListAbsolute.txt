@@ -1,0 +1,15 @@
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Models/bin/Debug/net6.0/Movies.Models.deps.json
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Models/bin/Debug/net6.0/Movies.Models.dll
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Models/bin/Debug/net6.0/Movies.Models.pdb
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Models/bin/Debug/net6.0/Movies.Common.dll
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Models/bin/Debug/net6.0/Movies.Common.pdb
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Models/obj/Debug/net6.0/Movies.Models.csproj.AssemblyReference.cache
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Models/obj/Debug/net6.0/Movies.Models.GeneratedMSBuildEditorConfig.editorconfig
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Models/obj/Debug/net6.0/Movies.Models.AssemblyInfoInputs.cache
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Models/obj/Debug/net6.0/Movies.Models.AssemblyInfo.cs
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Models/obj/Debug/net6.0/Movies.Models.csproj.CoreCompileInputs.cache
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Models/obj/Debug/net6.0/Movies.Models.csproj.CopyComplete
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Models/obj/Debug/net6.0/Movies.Models.dll
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Models/obj/Debug/net6.0/refint/Movies.Models.dll
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Models/obj/Debug/net6.0/Movies.Models.pdb
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Models/obj/Debug/net6.0/ref/Movies.Models.dll

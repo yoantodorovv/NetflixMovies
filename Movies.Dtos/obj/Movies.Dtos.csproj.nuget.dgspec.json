@@ -1,0 +1,187 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Dtos/Movies.Dtos.csproj": {}
+  },
+  "projects": {
+    "/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Common/Movies.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Common/Movies.Common.csproj",
+        "projectName": "Movies.Common",
+        "projectPath": "/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Common/Movies.Common.csproj",
+        "packagesPath": "/Users/yoantodorov/.nuget/packages/",
+        "outputPath": "/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Common/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/yoantodorov/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.421/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Dtos/Movies.Dtos.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Dtos/Movies.Dtos.csproj",
+        "projectName": "Movies.Dtos",
+        "projectPath": "/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Dtos/Movies.Dtos.csproj",
+        "packagesPath": "/Users/yoantodorov/.nuget/packages/",
+        "outputPath": "/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Dtos/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/yoantodorov/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Models/Movies.Models.csproj": {
+                "projectPath": "/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Models/Movies.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[33.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.421/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Models/Movies.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Models/Movies.Models.csproj",
+        "projectName": "Movies.Models",
+        "projectPath": "/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Models/Movies.Models.csproj",
+        "packagesPath": "/Users/yoantodorov/.nuget/packages/",
+        "outputPath": "/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Models/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/yoantodorov/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Common/Movies.Common.csproj": {
+                "projectPath": "/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Common/Movies.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[6.0.29, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.421/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
