@@ -58,19 +58,26 @@ public class Program
         services.AddControllersWithViews();
         
         services.AddScoped<IReaderAppService, ReaderAppService>();
+        services.AddScoped<UserManager<ApplicationUser>>();
+        services.AddScoped<SignInManager<ApplicationUser>>();
+        services.AddScoped<RoleManager<ApplicationRole>>();
         
-        services.AddIdentityCore<ApplicationUser>(options =>
+        services.AddDefaultIdentity<ApplicationUser>(options =>
             {
-                options.SignIn.RequireConfirmedAccount = configuration.GetValue<bool>("Identity:RequireConfirmedAccount");
+                options.SignIn.RequireConfirmedAccount =
+                    configuration.GetValue<bool>("Identity:RequireConfirmedAccount");
                 options.SignIn.RequireConfirmedEmail = configuration.GetValue<bool>("Identity:RequireConfirmedEmail");
-                options.SignIn.RequireConfirmedPhoneNumber = configuration.GetValue<bool>("Identity:RequireConfirmedPhoneNumber");
+                options.SignIn.RequireConfirmedPhoneNumber =
+                    configuration.GetValue<bool>("Identity:RequireConfirmedPhoneNumber");
                 options.Password.RequireLowercase = configuration.GetValue<bool>("Identity:RequireLowercase");
                 options.Password.RequireUppercase = configuration.GetValue<bool>("Identity:RequireUppercase");
-                options.Password.RequireNonAlphanumeric = configuration.GetValue<bool>("Identity:RequireNonAlphanumeric");
+                options.Password.RequireNonAlphanumeric =
+                    configuration.GetValue<bool>("Identity:RequireNonAlphanumeric");
                 options.Password.RequiredLength = configuration.GetValue<int>("Identity:RequiredLength");
             })
             .AddRoles<ApplicationRole>()
-            .AddEntityFrameworkStores<ApplicationDbContext>();
+            .AddEntityFrameworkStores<ApplicationDbContext>()
+            .AddDefaultTokenProviders();
 
         services.AddRazorPages();
     }

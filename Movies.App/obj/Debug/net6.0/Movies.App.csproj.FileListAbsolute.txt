@@ -86,3 +86,7 @@
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/obj/Debug/net6.0/Movies.App.genruntimeconfig.cache
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/obj/Debug/net6.0/ref/Movies.App.dll
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/Data/data.csv
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/Microsoft.AspNetCore.Identity.UI.dll
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/Microsoft.Extensions.FileProviders.Abstractions.dll
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/Microsoft.Extensions.FileProviders.Embedded.dll
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/obj/Debug/net6.0/Movies.App.MvcApplicationPartsAssemblyInfo.cs
