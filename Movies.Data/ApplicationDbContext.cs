@@ -7,11 +7,14 @@ namespace Movies.Data;
 
 public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
 {
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-        : base(options)
+    public ApplicationDbContext()
     {
         
     }
+    
+    // public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+    //     : base(options)
+    // {}
 
     public DbSet<Show> Shows { get; set; }
     public DbSet<Director> Directors { get; set; }
@@ -21,13 +24,11 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, Applicati
     public DbSet<Duration> Durations { get; set; }
     public DbSet<Rating> Ratings { get; set; }
 
+    // TODO: Get con string form config
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
+        optionsBuilder.UseSqlServer("Server=.;Database=MoviesTest;User Id=sa;Password=Password123$;");
+        
         base.OnConfiguring(optionsBuilder);
-    }
-
-    protected override void OnModelCreating(ModelBuilder builder)
-    {
-        base.OnModelCreating(builder);
     }
 }

@@ -3,7 +3,6 @@
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/obj/Debug/net6.0/Movies.App.AssemblyInfoInputs.cache
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/obj/Debug/net6.0/Movies.App.AssemblyInfo.cs
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/obj/Debug/net6.0/Movies.App.csproj.CoreCompileInputs.cache
-/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/obj/Debug/net6.0/Movies.App.MvcApplicationPartsAssemblyInfo.cs
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/obj/Debug/net6.0/Movies.App.MvcApplicationPartsAssemblyInfo.cache
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/obj/Debug/net6.0/Movies.App.RazorAssemblyInfo.cache
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/obj/Debug/net6.0/Movies.App.RazorAssemblyInfo.cs
@@ -19,9 +18,7 @@
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/Humanizer.dll
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/Microsoft.AspNetCore.Cryptography.Internal.dll
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/Microsoft.AspNetCore.Identity.UI.dll
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/Microsoft.Data.SqlClient.dll
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -32,7 +29,6 @@
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/Microsoft.Extensions.Configuration.Abstractions.dll
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.dll
-/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/Microsoft.Extensions.FileProviders.Embedded.dll
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/Microsoft.Extensions.Identity.Core.dll
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/Microsoft.Extensions.Identity.Stores.dll
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/Microsoft.Extensions.Logging.dll

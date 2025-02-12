@@ -19,15 +19,7 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
-        builder.Services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-        builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-
-        builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-            .AddEntityFrameworkStores<ApplicationDbContext>();
-        builder.Services.AddControllersWithViews();
-
-        RegisterServices(builder);
+        RegisterServices(builder.Services, builder.Configuration);
 
         var app = builder.Build();
         
@@ -37,12 +29,7 @@ public class Program
             await readerService.SeedDatabaseAsync();
         }
 
-        // Configure the HTTP request pipeline.
-        if (app.Environment.IsDevelopment())
-        {
-            app.UseMigrationsEndPoint();
-        }
-        else
+        if (!app.Environment.IsDevelopment())
         {
             app.UseExceptionHandler("/Home/Error");
             // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
@@ -62,11 +49,28 @@ public class Program
             pattern: "{controller=Home}/{action=Index}/{id?}");
         app.MapRazorPages();
 
-        app.Run();
+        await app.RunAsync();
     }
 
-    private static void RegisterServices(WebApplicationBuilder builder)
+    private static void RegisterServices(IServiceCollection services, IConfiguration configuration)
     {
-        builder.Services.AddScoped<IReaderAppService, ReaderAppService>();
+        services.AddDbContext<ApplicationDbContext>();
+
+        services.AddControllersWithViews();
+        
+        services.AddScoped<IReaderAppService, ReaderAppService>();
+        
+        services.AddIdentityCore<ApplicationUser>(options =>
+            {
+                options.SignIn.RequireConfirmedAccount = configuration.GetValue<bool>("Identity:RequireConfirmedAccount");
+                options.SignIn.RequireConfirmedEmail = configuration.GetValue<bool>("Identity:RequireConfirmedEmail");
+                options.SignIn.RequireConfirmedPhoneNumber = configuration.GetValue<bool>("Identity:RequireConfirmedPhoneNumber");
+                options.Password.RequireLowercase = configuration.GetValue<bool>("Identity:RequireLowercase");
+                options.Password.RequireUppercase = configuration.GetValue<bool>("Identity:RequireUppercase");
+                options.Password.RequireNonAlphanumeric = configuration.GetValue<bool>("Identity:RequireNonAlphanumeric");
+                options.Password.RequiredLength = configuration.GetValue<int>("Identity:RequiredLength");
+            })
+            .AddRoles<ApplicationRole>()
+            .AddEntityFrameworkStores<ApplicationDbContext>();
     }
 }

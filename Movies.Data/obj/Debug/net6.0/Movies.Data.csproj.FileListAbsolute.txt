@@ -17,3 +17,4 @@
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Data/obj/Debug/net6.0/Movies.Data.pdb
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Data/obj/Debug/net6.0/Movies.Data.genruntimeconfig.cache
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Data/obj/Debug/net6.0/ref/Movies.Data.dll
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Data/bin/Debug/net6.0/Microsoft.Extensions.Configuration.dll
