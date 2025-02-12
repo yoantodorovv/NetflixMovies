@@ -9,3 +9,8 @@ obj/
 *.user
 *.cache
 *.vscode/
+
+*.dll
+*.pdb
+*.info
+*.sentinel
