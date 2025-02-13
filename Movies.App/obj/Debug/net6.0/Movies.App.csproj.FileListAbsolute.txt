@@ -93,3 +93,6 @@
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/AngleSharp.dll
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/AngleSharp.Css.dll
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/HtmlSanitizer.dll
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/Newtonsoft.Json.dll
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/System.Text.Encodings.Web.dll
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll

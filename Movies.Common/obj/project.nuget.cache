@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "K1oCkbh75Bk=",
+  "dgSpecHash": "ksFiGR5CKyE=",
   "success": true,
   "projectFilePath": "/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.Common/Movies.Common.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/yoantodorov/.nuget/packages/microsoft.aspnetcore.http.abstractions/2.3.0/microsoft.aspnetcore.http.abstractions.2.3.0.nupkg.sha512",
+    "/Users/yoantodorov/.nuget/packages/microsoft.aspnetcore.http.extensions/2.3.0/microsoft.aspnetcore.http.extensions.2.3.0.nupkg.sha512",
+    "/Users/yoantodorov/.nuget/packages/microsoft.aspnetcore.http.features/2.3.0/microsoft.aspnetcore.http.features.2.3.0.nupkg.sha512",
+    "/Users/yoantodorov/.nuget/packages/microsoft.extensions.fileproviders.abstractions/8.0.0/microsoft.extensions.fileproviders.abstractions.8.0.0.nupkg.sha512",
+    "/Users/yoantodorov/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "/Users/yoantodorov/.nuget/packages/microsoft.net.http.headers/2.3.0/microsoft.net.http.headers.2.3.0.nupkg.sha512",
+    "/Users/yoantodorov/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/Users/yoantodorov/.nuget/packages/system.buffers/4.6.0/system.buffers.4.6.0.nupkg.sha512",
+    "/Users/yoantodorov/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "/Users/yoantodorov/.nuget/packages/system.text.encodings.web/8.0.0/system.text.encodings.web.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
