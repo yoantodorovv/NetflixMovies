@@ -7,7 +7,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Movies.AppServices.ReaderAppService;
 using Movies.AppServices.ReaderAppService.Interface;
+using Movies.AppServices.ShowAppService;
+using Movies.AppServices.ShowAppService.Interface;
 using Movies.Data;
+using Movies.Models.Models;
 using Movies.Models.Models.Identity;
 
 namespace Movies.App;
@@ -22,11 +25,11 @@ public class Program
 
         var app = builder.Build();
         
-        using (var scope = app.Services.CreateScope())
-        {
-            var readerService = scope.ServiceProvider.GetRequiredService<IReaderAppService>();
-            await readerService.SeedDatabaseAsync();
-        }
+        // using (var scope = app.Services.CreateScope())
+        // {
+        //     var readerService = scope.ServiceProvider.GetRequiredService<IReaderAppService>();
+        //     await readerService.SeedDatabaseAsync();
+        // }
 
         if (!app.Environment.IsDevelopment())
         {
@@ -58,6 +61,8 @@ public class Program
         services.AddControllersWithViews();
         
         services.AddScoped<IReaderAppService, ReaderAppService>();
+
+        services.AddTransient<IShowAppService, ShowAppService>();
         
         services.AddDefaultIdentity<ApplicationUser>(options =>
             {

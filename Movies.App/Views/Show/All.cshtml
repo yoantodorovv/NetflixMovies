@@ -1,0 +1,21 @@
+@model AllShowsDto
+
+@{
+    ViewData["Title"] = "All Movies";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["Title"]</h1>
+</div>
+<hr />
+<div>
+    <h3>Page @Model.PageNumber</h3>
+    <div class="row row-cols-1 row-cols-md-3">
+        @foreach (var show in Model.Shows)
+        {
+            <partial name="_ShowInListPartial" model="show" />
+        }
+    </div>
+</div>
+<hr />
+<partial name="_PaginationPartial" model="@Model"/>

@@ -7,14 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Cast\" />
-      <Folder Include="Category\" />
-      <Folder Include="Country\" />
-      <Folder Include="Director\" />
-      <Folder Include="Rating\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\Movies.Models\Movies.Models.csproj" />
     </ItemGroup>
 

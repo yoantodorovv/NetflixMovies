@@ -1,0 +1,59 @@
+@model PaginationDto
+
+<nav aria-label="...">
+    <ul class="pagination justify-content-center">
+        <li class="page-item @if (!Model.HasPreviousPage) { <text>disabled</text> } ">
+            <a class="page-link" asp-controller=@Model.ControllerName asp-action=@Model.ActionName asp-route-id="@Model.PreviousPageNumber">Previous</a>
+        </li>
+        @if (Model.PageNumber > 2)
+        {
+            <li class="page-item">
+                <a class="page-link" asp-controller=@Model.ControllerName asp-action=@Model.ActionName asp-route-id="1">1</a>
+            </li>
+        }
+        @if (Model.PageNumber - 2 > 0 && Model.PageNumber > 2)
+        {
+            <li class="page-item">
+                <a class="page-link">...</a>
+            </li>
+        }
+        @for (int i = Model.PageNumber - 1; i < Model.PageNumber; i++)
+        {
+            @if (i > 0)
+            {
+                <li class="page-item">
+                    <a class="page-link" asp-controller=@Model.ControllerName asp-action=@Model.ActionName asp-route-id="@Model.PreviousPageNumber">@Model.PreviousPageNumber</a>
+                </li>
+            }
+        }
+        <li class="page-item active">
+            <span class="page-link">
+                @Model.PageNumber
+            </span>
+        </li>
+        @for (int i = Model.PageNumber + 1; i < Model.PageNumber + 2; i++)
+        {
+            @if (i <= Model.PagesCount)
+            {
+                <li class="page-item">
+                    <a class="page-link" asp-controller=@Model.ControllerName asp-action=@Model.ActionName asp-route-id="@Model.NextPageNumber">@Model.NextPageNumber</a>
+                </li>
+            }
+        }
+        @if (Model.PageNumber + 2 <= Model.PagesCount)
+        {
+            <li class="page-item">
+                <a class="page-link">...</a>
+            </li>
+        }
+        @if (Model.PageNumber + 2 <= Model.PagesCount)
+        {
+            <li class="page-item">
+                <a class="page-link" asp-controller=@Model.ControllerName asp-action=@Model.ActionName asp-route-id="@Model.PagesCount">@Model.PagesCount</a>
+            </li>
+        }
+        <li class="page-item @if (!Model.HasNextPage) { <text>disabled</text> }">
+            <a class="page-link" asp-controller=@Model.ControllerName asp-action=@Model.ActionName asp-route-id="@Model.NextPageNumber">Next</a>
+        </li>
+    </ul>
+</nav>

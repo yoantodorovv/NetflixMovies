@@ -1,0 +1,28 @@
+@model ShowPagedDto
+
+@{
+    var imageUrl = "https://i.pinimg.com/736x/72/a0/50/72a0500ff35991d147a6b48e4bffc721.jpg";
+}
+
+<div class="col mt-5">
+    <div class="card">
+        <div class="card-body">
+            <img src="@imageUrl" class="card-img-top" alt="@Model.Title" />
+            <h5><a class="text-decoration-none text-body mt-xl-1" asp-controller="Show" asp-action="ById" asp-route-id="@Model.Id">@Model.Title</a></h5>
+            <small>@Model.ShowTypeText</small>
+            <hr/>
+            <p class="card-text">
+                <strong>Date Added:</strong> @Model.DateAdded.ToString()
+                <br/>
+                <strong>Duration:</strong> @Model.DurationText
+                <br/>
+                <strong>Rating:</strong> @Model.Rating
+                <br/>
+                <strong>Directors:</strong> @Model.DirectorsText
+                <br/>
+                <strong>Listed In:</strong> @Model.CategoriesText
+            </p>
+            <a type="button" asp-controller="Show" asp-action="ById" asp-route-id=@Model.Id class="btn btn-primary">View More</a>
+        </div>
+    </div>
+</div>

@@ -10,6 +10,7 @@ public class ShowDto
     
     public ShowDto(Models.Models.Show show)
     {
+        Id = Id;
         Type = show.Type;
         Title = show.Title;
         DateAdded = show.DateAdded;
@@ -24,6 +25,8 @@ public class ShowDto
         DurationType = show.DurationType;
         DurationValue = show.DurationValue;
     }
+
+    public Guid Id { get; set; }
     
     public ShowType Type { get; set; }
 
@@ -39,13 +42,13 @@ public class ShowDto
 
     public int DurationValue { get; set; }
     
-    public ICollection<Director> Directors { get; set; }
+    public ICollection<Models.Models.Director> Directors { get; set; }
     
     public ICollection<Cast> Cast { get; set; }
     
     public ICollection<Country> Countries { get; set; }
 
-    public ICollection<Category> Categories { get; set; }
+    public ICollection<Models.Models.Category> Categories { get; set; }
 
     public int RatingId { get; set; }
     public Rating? Rating { get; set; }
