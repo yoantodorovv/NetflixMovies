@@ -28,6 +28,7 @@
                 <p><strong>Listed In:</strong> @Model.CategoriesText</p>
                 <p><strong>Countries:</strong> @Model.CountriesText</p>
             </div>
+            <a class="btn btn-primary" href="@Url.Action("Add", "Watchlist", new { idRaw = Model.Id.ToString(), title = Model.Title, type = Model.ShowTypeText })">Add to Watchlist</a>
         </div>
     </div>
 </div>

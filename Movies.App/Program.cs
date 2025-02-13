@@ -1,4 +1,5 @@
 using System;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -41,6 +42,7 @@ public class Program
         app.UseHttpsRedirection();
         app.UseStaticFiles();
 
+        app.UseSession();
         app.UseRouting();
 
         app.UseAuthentication();
@@ -58,10 +60,11 @@ public class Program
     {
         services.AddDbContext<ApplicationDbContext>();
 
+        services.AddSession();
+        services.AddHttpContextAccessor();
         services.AddControllersWithViews();
         
         services.AddScoped<IReaderAppService, ReaderAppService>();
-
         services.AddTransient<IShowAppService, ShowAppService>();
         
         services.AddDefaultIdentity<ApplicationUser>(options =>
@@ -80,6 +83,11 @@ public class Program
             .AddRoles<ApplicationRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
+        
+        services.ConfigureApplicationCookie(options =>
+        {
+            options.LoginPath = "/Account/Login";
+        });
 
         services.AddRazorPages();
     }

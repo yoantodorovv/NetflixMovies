@@ -1,0 +1,25 @@
+@model List<WatchlistShowDto>
+
+@{
+    ViewData["Title"] = "Watchlist";
+}
+
+<div>
+    <div>
+        <h1>Watchlist</h1>
+        <hr />
+    </div>
+    <div class="d-flex ms-xl-5 me-xl-5 align-items-center flex-column">
+        @if (Model.Count == 0)
+        {
+            <div class="d-flex justify-content-center align-items-center">No movies added yet!</div>
+        }
+        else
+        {
+            @foreach (var show in Model)
+            {
+                <partial name="_ShowInWatchlistPartial" model="show" />
+            }
+        }
+    </div>
+</div>

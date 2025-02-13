@@ -10,7 +10,7 @@ public class ShowDto
     
     public ShowDto(Models.Models.Show show)
     {
-        Id = Id;
+        Id = show.Id;
         Type = show.Type;
         Title = show.Title;
         DateAdded = show.DateAdded;
