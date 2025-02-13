@@ -25,14 +25,15 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         RegisterServices(builder.Services, builder.Configuration);
-
         var app = builder.Build();
-        
-        using (var scope = app.Services.CreateScope())
-        {
-            var readerService = scope.ServiceProvider.GetRequiredService<IReaderAppService>();
-            await readerService.SeedDatabaseAsync();
-        }
+        await ConfigureApp(app);
+
+        await app.RunAsync();
+    }
+
+    private static async Task ConfigureApp(WebApplication app)
+    {
+        await SeedDatabase(app.Services);
 
         if (!app.Environment.IsDevelopment())
         {
@@ -54,8 +55,6 @@ public class Program
             name: "default",
             pattern: "{controller=Home}/{action=Index}/{id?}");
         app.MapRazorPages();
-
-        await app.RunAsync();
     }
 
     private static void RegisterServices(IServiceCollection services, IConfiguration configuration)
@@ -93,5 +92,12 @@ public class Program
         });
 
         services.AddRazorPages();
+    }
+
+    private static async Task SeedDatabase(IServiceProvider services)
+    {
+        using var scope = services.CreateScope();
+        var readerService = scope.ServiceProvider.GetRequiredService<IReaderAppService>();
+        await readerService.SeedDatabaseAsync();
     }
 }
