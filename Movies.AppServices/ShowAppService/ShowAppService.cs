@@ -28,6 +28,11 @@ public class ShowAppService : IShowAppService
         .Include(x => x.Countries)
         .Include(x => x.Rating);
 
+    public async Task<ShowDto> GetById(Guid id) => await ShowsQueryableWithIncludings
+        .Where(x => x.Id == id)
+        .Select(x => new ShowDto(x))
+        .FirstOrDefaultAsync();
+    
     public async Task<ICollection<ShowPagedDto>> GetPagedAsync(int page, int itemsPerPage) => await ShowsQueryableWithIncludings
         .Skip((page - 1) * itemsPerPage)
         .Take(itemsPerPage)

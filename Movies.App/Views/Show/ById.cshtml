@@ -1,0 +1,33 @@
+@model ShowSingleDto
+
+@{
+    this.ViewData["Title"] = Model.Title;
+    
+    var imageUrl = "https://i.pinimg.com/736x/72/a0/50/72a0500ff35991d147a6b48e4bffc721.jpg";
+}
+
+<div>
+    <div>
+        <h1>@Model.Title</h1>
+        <p>@Model.ShowTypeText</p>
+        <hr />
+    </div>
+    <div class="d-flex">
+        <div class="d-flex justify-content-center align-items-center col-5 me-xl-3">
+            <img src="@imageUrl" class="card-img-top" alt="@Model.Title"/>
+        </div>
+        <div class="d-flex justify-content-center flex-column col-7 ms-xl-3">
+            <h3>Details:</h3>
+            <div class="d-flex justify-content-center flex-column">
+                <p>@Model.Description</p>
+                <p><strong>Date Added:</strong> @Model.DateAddedText</p>
+                <p><strong>Duration:</strong> @Model.DurationText</p>
+                <p><strong>Rating:</strong> @Model.RatingText</p>
+                <p><strong>Directors:</strong> @Model.DirectorsText</p>
+                <p><strong>Cast:</strong> @Model.CastText</p>
+                <p><strong>Listed In:</strong> @Model.CategoriesText</p>
+                <p><strong>Countries:</strong> @Model.CountriesText</p>
+            </div>
+        </div>
+    </div>
+</div>

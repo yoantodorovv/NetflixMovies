@@ -44,12 +44,12 @@ public class ShowDto
     
     public ICollection<Models.Models.Director> Directors { get; set; }
     
-    public ICollection<Cast> Cast { get; set; }
+    public ICollection<Models.Models.Cast> Cast { get; set; }
     
-    public ICollection<Country> Countries { get; set; }
+    public ICollection<Models.Models.Country> Countries { get; set; }
 
     public ICollection<Models.Models.Category> Categories { get; set; }
 
     public int RatingId { get; set; }
-    public Rating? Rating { get; set; }
+    public Models.Models.Rating? Rating { get; set; }
 }

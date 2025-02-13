@@ -32,4 +32,13 @@ public class ShowController : Controller
         
         return View(model);
     }
+    
+    [AllowAnonymous]
+    [HttpGet]
+    public async Task<IActionResult> ById(string id)
+    {
+        var show = await this._showService.GetById(new Guid(id));
+
+        return this.View(new ShowSingleDto(show));
+    }
 }
