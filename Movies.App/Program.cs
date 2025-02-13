@@ -28,11 +28,11 @@ public class Program
 
         var app = builder.Build();
         
-        // using (var scope = app.Services.CreateScope())
-        // {
-        //     var readerService = scope.ServiceProvider.GetRequiredService<IReaderAppService>();
-        //     await readerService.SeedDatabaseAsync();
-        // }
+        using (var scope = app.Services.CreateScope())
+        {
+            var readerService = scope.ServiceProvider.GetRequiredService<IReaderAppService>();
+            await readerService.SeedDatabaseAsync();
+        }
 
         if (!app.Environment.IsDevelopment())
         {
