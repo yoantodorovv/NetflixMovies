@@ -1,26 +1,11 @@
 using Movies.Common.Enumerations;
 using Movies.Dtos.Category;
 using Movies.Dtos.Director;
-using Movies.Dtos.Show.Interfaces;
-using Movies.Models.Models;
 
-namespace Movies.Dtos.Show;
+namespace Movies.Dtos.Show.Interfaces;
 
-public class ShowPagedDto : IShowInListDto
+public interface IShowInListDto
 {
-    public ShowPagedDto(Models.Models.Show show)
-    {
-        Id = show.Id;
-        Type = show.Type;
-        Title = show.Title;
-        DateAdded = show.DateAdded;
-        DurationType = show.DurationType;
-        DurationValue = show.DurationValue;
-        Directors = show.Directors.Select(x => new DirectorDto(x)).ToList();
-        Categories = show.Categories.Select(x => new CategoryDto(x)).ToList();
-        Rating = show.Rating?.Type ?? "Not Rated";
-    }
-    
     public Guid Id { get; set; }
     
     public ShowType Type { get; set; }

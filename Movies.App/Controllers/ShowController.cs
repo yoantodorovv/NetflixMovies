@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Movies.AppServices.RecentlyViewedAppService.Inteface;
 using Movies.AppServices.ShowAppService.Interface;
 using Movies.Dtos.Show;
 
@@ -7,13 +8,17 @@ namespace Movies.App.Controllers;
 
 public class ShowController : Controller
 {
-    private readonly int _itemsPerPage = 6;
+    private const int ItemsPerPage = 6;
     
     private readonly IShowAppService _showService;
+    private readonly IRecentlyViewedAppService _recentlyViewedService;
     
-    public ShowController(IShowAppService showService)
+    public ShowController(
+        IShowAppService showService, 
+        IRecentlyViewedAppService recentlyViewedService)
     {
         _showService = showService;
+        _recentlyViewedService = recentlyViewedService;
     }
     
     [HttpGet]
@@ -24,10 +29,10 @@ public class ShowController : Controller
         {
             ControllerName = "Show",
             ActionName = "All",
-            ItemsPerPage = _itemsPerPage,
+            ItemsPerPage = ItemsPerPage,
             PageNumber = id,
             EntityCount = await _showService.GetCountAsync(),
-            Shows = await _showService.GetPagedAsync(id, _itemsPerPage)
+            Shows = await _showService.GetPagedAsync(id, ItemsPerPage)
         };
         
         return View(model);
@@ -38,6 +43,8 @@ public class ShowController : Controller
     public async Task<IActionResult> ById(string id)
     {
         var show = await this._showService.GetById(new Guid(id));
+        
+        _recentlyViewedService.SaveRecentlyViewed(new RecentlyViewedShowDto(show));
 
         return this.View(new ShowSingleDto(show));
     }

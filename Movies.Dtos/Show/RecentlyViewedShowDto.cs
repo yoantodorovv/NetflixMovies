@@ -2,13 +2,15 @@ using Movies.Common.Enumerations;
 using Movies.Dtos.Category;
 using Movies.Dtos.Director;
 using Movies.Dtos.Show.Interfaces;
-using Movies.Models.Models;
 
 namespace Movies.Dtos.Show;
 
-public class ShowPagedDto : IShowInListDto
+public class RecentlyViewedShowDto : IShowInListDto
 {
-    public ShowPagedDto(Models.Models.Show show)
+    public RecentlyViewedShowDto()
+    { }
+    
+    public RecentlyViewedShowDto(ShowDto show)
     {
         Id = show.Id;
         Type = show.Type;
@@ -20,7 +22,7 @@ public class ShowPagedDto : IShowInListDto
         Categories = show.Categories.Select(x => new CategoryDto(x)).ToList();
         Rating = show.Rating?.Type ?? "Not Rated";
     }
-    
+
     public Guid Id { get; set; }
     
     public ShowType Type { get; set; }

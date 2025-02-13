@@ -4,7 +4,7 @@ public class CategoryDto
 {
     public CategoryDto(Models.Models.Category category)
     {
-        Name = category.Name;
+        Name = category?.Name ?? "";
     }
     
     public string Name { get; set; }

@@ -1,6 +1,7 @@
+using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
-namespace Movies.App.Extensions;
+namespace Movies.Common.Extensions;
 
 public static class SessionExtensions
 {

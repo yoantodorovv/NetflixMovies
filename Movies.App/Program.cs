@@ -8,6 +8,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Movies.AppServices.ReaderAppService;
 using Movies.AppServices.ReaderAppService.Interface;
+using Movies.AppServices.RecentlyViewedAppService;
+using Movies.AppServices.RecentlyViewedAppService.Inteface;
 using Movies.AppServices.ShowAppService;
 using Movies.AppServices.ShowAppService.Interface;
 using Movies.Data;
@@ -66,6 +68,7 @@ public class Program
         
         services.AddScoped<IReaderAppService, ReaderAppService>();
         services.AddTransient<IShowAppService, ShowAppService>();
+        services.AddTransient<IRecentlyViewedAppService, RecentlyViewedAppService>();
         
         services.AddDefaultIdentity<ApplicationUser>(options =>
             {

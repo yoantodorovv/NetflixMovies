@@ -1,8 +1,39 @@
-﻿@{
+﻿@model HomeDto
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="">
+    @if (Model.HasRecentlyViewed)
+    {
+        <div id="recently-viewed">
+            <h1>Recently Viewed Shows</h1>
+            <div class="row row-cols-1 row-cols-md-3">
+                @foreach (var show in Model.RecentlyViewedShowDtos)
+                {
+                    <partial name="_ShowInListPartial" model="show"/>
+                }
+            </div>
+        </div>
+    }
+    <div id="shortest-movies">
+        <h1>Top 5 Shortest Movies to Watch</h1>
+        <div class="row row-cols-1 row-cols-md-3">
+            @foreach (var show in Model.ShortestMovies)
+            {
+                <partial name="_ShowInListPartial" model="show"/>
+            }
+        </div>
+    </div>
+
+    <div id="shortest-series">
+        <h1>Top 5 Shortest Series to Watch</h1>
+        <div class="row row-cols-1 row-cols-md-3">
+            @foreach (var show in Model.ShortestSeries)
+            {
+                <partial name="_ShowInListPartial" model="show"/>
+            }
+        </div>
+    </div>
 </div>

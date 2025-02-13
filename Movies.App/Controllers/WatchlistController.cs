@@ -1,9 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Movies.App.Extensions;
-using Movies.Dtos.Category;
+using Movies.Common.Extensions;
 using Movies.Dtos.Show;
-using Movies.Models.Models;
 
 namespace Movies.App.Controllers;
 
