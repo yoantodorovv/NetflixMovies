@@ -19,6 +19,14 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -31,8 +39,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/Views/Shared/_PaginationPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19QYWdpbmF0aW9uUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/Views/Shared/_ShowInListPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19TaG93SW5MaXN0UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/Views/Show/All.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hvdy9BbGwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/Views/Show/ById.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hvdy9CeUlkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/Views/_ViewImports.cshtml]

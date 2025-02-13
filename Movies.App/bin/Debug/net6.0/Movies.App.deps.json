@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "Movies.App/1.0.0": {
         "dependencies": {
+          "HtmlSanitizer": "9.1.878-beta",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.36",
           "Microsoft.AspNetCore.Identity.UI": "6.0.36",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.36",
@@ -19,11 +20,43 @@
           "Movies.App.dll": {}
         }
       },
+      "AngleSharp/1.2.0": {
+        "runtime": {
+          "lib/net6.0/AngleSharp.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        }
+      },
+      "AngleSharp.Css/1.0.0-beta.151": {
+        "dependencies": {
+          "AngleSharp": "1.2.0"
+        },
+        "runtime": {
+          "lib/net6.0/AngleSharp.Css.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "CsvHelper/33.0.1": {
         "runtime": {
           "lib/net6.0/CsvHelper.dll": {
             "assemblyVersion": "33.0.0.0",
             "fileVersion": "33.0.1.24"
+          }
+        }
+      },
+      "HtmlSanitizer/9.1.878-beta": {
+        "dependencies": {
+          "AngleSharp": "1.2.0",
+          "AngleSharp.Css": "1.0.0-beta.151",
+          "System.Collections.Immutable": "9.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/HtmlSanitizer.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.1.878.0"
           }
         }
       },
@@ -144,7 +177,7 @@
           "Microsoft.Extensions.Caching.Memory": "6.0.3",
           "Microsoft.Extensions.DependencyInjection": "6.0.2",
           "Microsoft.Extensions.Logging": "6.0.1",
-          "System.Collections.Immutable": "6.0.1",
+          "System.Collections.Immutable": "9.0.1",
           "System.Diagnostics.DiagnosticSource": "6.0.2"
         },
         "runtime": {
@@ -448,11 +481,15 @@
           }
         }
       },
-      "System.Collections.Immutable/6.0.1": {
+      "System.Collections.Immutable/9.0.1": {
+        "dependencies": {
+          "System.Memory": "4.5.5",
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
         "runtime": {
-          "lib/net6.0/System.Collections.Immutable.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.3624.51421"
+          "lib/netstandard2.0/System.Collections.Immutable.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.124.61010"
           }
         }
       },
@@ -514,6 +551,7 @@
           }
         }
       },
+      "System.Memory/4.5.5": {},
       "System.Runtime.Caching/4.7.0": {
         "dependencies": {
           "System.Configuration.ConfigurationManager": "4.7.0"
@@ -533,6 +571,7 @@
           }
         }
       },
+      "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
       "System.Security.AccessControl/4.7.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.9",
@@ -644,12 +683,33 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AngleSharp/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uF/PzSCVcb+b2nqVvHZbOqexoJ9R6QLjonugPf0PQl+0h7YKaFZeXyspctbHe5HGlx7/Iuk5BErtk+t63ac/ZA==",
+      "path": "anglesharp/1.2.0",
+      "hashPath": "anglesharp.1.2.0.nupkg.sha512"
+    },
+    "AngleSharp.Css/1.0.0-beta.151": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oEnqXQcwpc/kkUIi2rxWHfFrmKlcJFpZZZjhEIHVc+aEJFo3U+5cptOHByQh+FW0PCW6ssVJ+GGBgbgyN8YPiw==",
+      "path": "anglesharp.css/1.0.0-beta.151",
+      "hashPath": "anglesharp.css.1.0.0-beta.151.nupkg.sha512"
+    },
     "CsvHelper/33.0.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-fev4lynklAU2A9GVMLtwarkwaanjSYB4wUqO2nOJX5hnzObORzUqVLe+bDYCUyIIRQM4o5Bsq3CcyJR89iMmEQ==",
       "path": "csvhelper/33.0.1",
       "hashPath": "csvhelper.33.0.1.nupkg.sha512"
+    },
+    "HtmlSanitizer/9.1.878-beta": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EvQgZEQ7YVyPn7fuM9j1R+bmiC08VEMD65Yi6+4QBPwJbumWqt+apfiwgMVmN66/7J4BV+cJrltNIrnDAQdJtw==",
+      "path": "htmlsanitizer/9.1.878-beta",
+      "hashPath": "htmlsanitizer.9.1.878-beta.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",
@@ -917,12 +977,12 @@
       "path": "microsoft.win32.systemevents/4.7.0",
       "hashPath": "microsoft.win32.systemevents.4.7.0.nupkg.sha512"
     },
-    "System.Collections.Immutable/6.0.1": {
+    "System.Collections.Immutable/9.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Cc+SfP+jyCmA1TnRnDA7cRZy5jbLyWodfuUJKDJ+PJZBwWkv8szz+ztSCHAonqnL01DRaHaS2ptc4bYIEdgvWw==",
-      "path": "system.collections.immutable/6.0.1",
-      "hashPath": "system.collections.immutable.6.0.1.nupkg.sha512"
+      "sha512": "sha512-qt4+ClsZYKzar/Rw1zbt0t9iuBUCLVNsjXicEuVQyKL7143CwhWzI2gTwzz8AhSaFYVHnpcb8SBGA+zaY4weUg==",
+      "path": "system.collections.immutable/9.0.1",
+      "hashPath": "system.collections.immutable.9.0.1.nupkg.sha512"
     },
     "System.Configuration.ConfigurationManager/4.7.0": {
       "type": "package",
@@ -952,12 +1012,26 @@
       "path": "system.identitymodel.tokens.jwt/6.36.0",
       "hashPath": "system.identitymodel.tokens.jwt.6.36.0.nupkg.sha512"
     },
+    "System.Memory/4.5.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XIWiDvKPXaTveaB7HVganDlOCRoj03l+jrwNvcge/t8vhGYKvqV+dMv6G4SAX2NoNmN0wZfVPTAlFwZcZvVOUw==",
+      "path": "system.memory/4.5.5",
+      "hashPath": "system.memory.4.5.5.nupkg.sha512"
+    },
     "System.Runtime.Caching/4.7.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-NdvNRjTPxYvIEhXQszT9L9vJhdQoX6AQ0AlhjTU+5NqFQVuacJTfhPVAvtGWNA2OJCqRiR/okBcZgMwI6MqcZg==",
       "path": "system.runtime.caching/4.7.0",
       "hashPath": "system.runtime.caching.4.7.0.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
+      "path": "system.runtime.compilerservices.unsafe/6.0.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
     },
     "System.Security.AccessControl/4.7.0": {
       "type": "package",

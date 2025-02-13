@@ -90,3 +90,6 @@
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/Microsoft.Extensions.FileProviders.Abstractions.dll
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/Microsoft.Extensions.FileProviders.Embedded.dll
 /Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/obj/Debug/net6.0/Movies.App.MvcApplicationPartsAssemblyInfo.cs
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/AngleSharp.dll
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/AngleSharp.Css.dll
+/Users/yoantodorov/Documents/GitHub/NetflixMovies/Movies.App/bin/Debug/net6.0/HtmlSanitizer.dll
