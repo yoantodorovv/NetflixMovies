@@ -34,7 +34,8 @@ public class Program
     private static async Task ConfigureApp(WebApplication app)
     {
         await SeedDatabase(app.Services);
-
+        await EnsureRolesExistAsync(app.Services);
+        
         if (!app.Environment.IsDevelopment())
         {
             app.UseExceptionHandler("/Home/Error");
@@ -54,6 +55,11 @@ public class Program
         app.MapControllerRoute(
             name: "default",
             pattern: "{controller=Home}/{action=Index}/{id?}");
+        app.MapControllerRoute(
+            name: "areas",
+            pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+        );
+
         app.MapRazorPages();
     }
 
@@ -99,5 +105,42 @@ public class Program
         using var scope = services.CreateScope();
         var readerService = scope.ServiceProvider.GetRequiredService<IReaderAppService>();
         await readerService.SeedDatabaseAsync();
+    }
+
+    private static async Task EnsureRolesExistAsync(IServiceProvider appServices)
+    {
+        using var scope = appServices.CreateScope();
+        var services = scope.ServiceProvider;
+        var roleManager = services.GetRequiredService<RoleManager<ApplicationRole>>();
+        var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+    
+        await EnsureRolesAsync(roleManager);
+        await EnsureAdminUserAsync(userManager);
+    }
+    
+    private static async Task EnsureRolesAsync(RoleManager<ApplicationRole> roleManager)
+    {
+        string[] roleNames = { "Admin", "User" };
+        foreach (var role in roleNames)
+        {
+            if (!await roleManager.RoleExistsAsync(role))
+            {
+                await roleManager.CreateAsync(new ApplicationRole { Name = role });
+            }
+        }
+    }
+    
+    private static async Task EnsureAdminUserAsync(UserManager<ApplicationUser> userManager)
+    {
+        var adminEmail = "admin@admin.com";
+        var adminPassword = "Admin123!";
+
+        var user = await userManager.FindByEmailAsync(adminEmail);
+        if (user == null)
+        {
+            user = new ApplicationUser { UserName = adminEmail, Email = adminEmail, EmailConfirmed = true };
+            await userManager.CreateAsync(user, adminPassword);
+            await userManager.AddToRoleAsync(user, "Admin");
+        }
     }
 }

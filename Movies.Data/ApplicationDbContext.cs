@@ -29,7 +29,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, Applicati
     // TODO: Get con string form config
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Server=.;Database=MoviesTest3;User Id=sa;Password=Password123$;");
+        optionsBuilder.UseSqlServer("Server=.;Database=NetflixMovies;User Id=sa;Password=Password123$;");
         
         base.OnConfiguring(optionsBuilder);
     }

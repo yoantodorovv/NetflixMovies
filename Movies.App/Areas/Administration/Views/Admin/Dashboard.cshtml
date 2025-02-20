@@ -1,0 +1,12 @@
+@{
+    ViewData["Title"] = "Admin Dashboard";
+    this.Layout = "_Layout";
+}
+
+<h2>Admin Dashboard</h2>
+<p>Welcome, Admin!</p>
+
+<ul class="">
+    <li><a asp-area="Administration" asp-controller="Admin" asp-action="ManageUsers">Manage Users</a></li>
+    <li><a asp-area="Administration" asp-controller="Admin" asp-action="ManageRoles">Manage Roles</a></li>
+</ul>
