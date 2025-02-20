@@ -34,6 +34,79 @@ public class AdminController : Controller
         return View(users);
     }
     
+    [HttpGet]
+    public IActionResult CreateUser()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> CreateUser(ApplicationUser model, string password)
+    {
+        if (ModelState.IsValid)
+        {
+            var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+            var result = await _userManager.CreateAsync(user, password);
+
+            if (result.Succeeded)
+                return RedirectToAction("ManageUsers");
+
+            foreach (var error in result.Errors)
+                ModelState.AddModelError("", error.Description);
+        }
+        return View(model);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> EditUser(string id)
+    {
+        var user = await _userManager.FindByIdAsync(id);
+        if (user == null) return NotFound();
+
+        return View(user);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> EditUser(ApplicationUser model)
+    {
+        var user = await _userManager.FindByIdAsync(model.Id);
+        if (user == null) return NotFound();
+
+        user.Email = model.Email;
+        user.UserName = model.Email;
+
+        var result = await _userManager.UpdateAsync(user);
+        if (result.Succeeded)
+            return RedirectToAction(nameof(ManageUsers));
+
+        foreach (var error in result.Errors)
+            ModelState.AddModelError("", error.Description);
+
+        return View(model);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> AssignRole(string id)
+    {
+        var user = await _userManager.FindByIdAsync(id);
+        if (user == null) return NotFound();
+
+        ViewBag.Roles = _roleManager.Roles.ToList();
+        return View(user);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> AssignRole(string id, string roleName)
+    {
+        var user = await _userManager.FindByIdAsync(id);
+        if (user == null) return NotFound();
+
+        if (await _roleManager.RoleExistsAsync(roleName))
+            await _userManager.AddToRoleAsync(user, roleName);
+
+        return RedirectToAction(nameof(ManageUsers));
+    }
+    
     [HttpPost]
     public async Task<IActionResult> DeleteUser(string id)
     {
