@@ -1,0 +1,11 @@
+@model ApplicationUser
+
+<h2>Edit User</h2>
+<form asp-action="EditUser" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <label>Email:</label>
+    <input asp-for="Email" class="form-control" required />
+
+    <button type="submit" class="btn btn-primary mt-3">Save Changes</button>
+</form>

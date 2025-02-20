@@ -3,11 +3,13 @@
     this.Layout = "_Layout";
 }
 
-<h2>Admin Dashboard</h2>
-<p>Welcome, Admin!</p>
-<hr />
+<div class="h-100">
+    <h2>Admin Dashboard</h2>
+    <p>Welcome, Admin!</p>
+    <hr />
 
-<ul class="list-unstyled w-100 d-flex justify-content-center align-items-center">
-    <li><a asp-area="Administration" asp-action="ManageUsers" asp-controller="Admin">Manage Users</a></li>
-    <li><a asp-area="Administration" asp-action="ManageRoles" asp-controller="Admin">Manage Roles</a></li>
-</ul>
+    <ul class="list-unstyled h-100 w-100 d-flex justify-content-center align-items-start">
+        <li class="ms-3 me-3 mt-lg-3"><a class="btn btn-outline-primary p-5" asp-area="Administration" asp-action="ManageUsers" asp-controller="Admin">Manage Users</a></li>
+        <li class="ms-3 me-3 mt-lg-3"><a class="btn btn-outline-primary p-5" asp-area="Administration" asp-action="ManageRoles" asp-controller="Admin">Manage Roles</a></li>
+    </ul>
+</div>

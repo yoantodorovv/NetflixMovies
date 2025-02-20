@@ -1,0 +1,19 @@
+@model ApplicationUser
+@{
+    var roles = ViewBag.Roles as List<ApplicationRole>;
+}
+
+<h2>Assign Role to @Model.Email</h2>
+<form asp-action="AssignRole" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+
+    <label>Select Role:</label>
+    <select name="roleName" class="form-control">
+        @foreach (var role in roles)
+        {
+            <option value="@role.Name">@role.Name</option>
+        }
+    </select>
+
+    <button type="submit" class="btn btn-primary mt-3">Assign Role</button>
+</form>
