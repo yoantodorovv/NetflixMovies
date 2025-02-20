@@ -1,0 +1,9 @@
+@model ApplicationRole
+
+<h2>Create Role</h2>
+<form asp-action="CreateRole" method="post">
+    <label>Role Name:</label>
+    <input asp-for="Name" class="form-control" required />
+
+    <button type="submit" class="btn btn-primary mt-3">Create Role</button>
+</form>
